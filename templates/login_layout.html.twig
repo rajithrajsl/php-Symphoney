@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel='icon' href="{{ asset('assets/images/favicon.ico')}}" type='image/x-icon' sizes="16x16" />
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('assets/css/sika.css') }}">
+            <!-- Font Awesome -->
+            <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">
+            <!-- Ionicons -->
+            <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+            <!-- icheck bootstrap -->
+            <link rel="stylesheet" href="{{ asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+            <!-- Theme style -->
+            <link rel="stylesheet" href="{{ asset('assets/css/adminlte.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/sika.css') }}">
+            <!-- Google Font: Source Sans Pro -->
+            <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+        {% endblock %}
+    </head>
+    <body class="hold-transition login-page">
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success flash-message-box alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <p>{{ message }}</p>
+            </div>
+        {% endfor %}
+    {% block body %}{% endblock %}
+    {% block javascripts %}
+        <!-- jQuery -->
+        <script src= "{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
+        <!-- Bootstrap 4 -->
+        <script src= "{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <!-- AdminLTE App -->
+        <script src= "{{ asset('assets/js/adminlte.min.js') }}"></script>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,68 @@
+{% extends 'login_layout.html.twig' %}
+
+{% block title %}SIKA | Register{% endblock %}
+
+{% block body %}
+     {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger flash-message-box alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+                <span class="sr-only">Close</span>
+            </button>
+            <p>{{ flashError|trans }}</p>
+        </div>
+     {% endfor %}
+    <div class="login-box">
+        <div class="card">
+            <div class="card-body login-card-body">
+                {{ form_start(registrationForm) }}
+                <div class="row">
+                    <div class="col-4">
+                        <div class="login-logo">
+                            <img src= "{{ asset('assets/images/logo.png') }}" alt="SIKA GROUP" />
+                            <a href="{{path('app_login')}}">SIKA GROUP</a>
+                        </div>
+                        <!-- /.login-logo -->
+                    </div>
+                    <div class="col-8" style="background-color: #fff;">
+                      
+                        <p class="login-box-msg float-left">Sign up for free</p>
+                        <div class="input-group mb-3">
+                            {{ form_widget(registrationForm.email) }}
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-envelope"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            {{ form_widget(registrationForm.plainPassword) }}
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-lock"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-8">
+                                 <div class="icheck-primary">
+                                        <input type="checkbox" id="agreeTerms" name="agreeTerms" required="required" value="1">
+                                        <label for="agreeTerms" class="required">Agree terms</label>
+                                 </div>
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-4">
+                                <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
+  <a class="home-link" href="{{path('homepage')}}">Home <span class="fas fa-house-user"></span></a>
+  
+{% endblock %}

@@ -1,0 +1,35 @@
+
+{% extends 'login_layout.html.twig' %}
+
+{% block title %}SIKA | Welcome{% endblock %}
+
+{% block body %}
+    <div class="login-box">
+        <div class="card">
+            <div class="card-body login-card-body">
+
+                <div class="row">
+                    <div class="col-4">
+                        <div class="login-logo">
+                            <img src= "{{ asset('assets/images/logo.png') }}" alt="SIKA GROUP" />
+                            <a href="{{path('app_login')}}">SIKA GROUP</a>
+                        </div>
+                        <!-- /.login-logo -->
+                    </div>
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="float-left login-box-msg"><b>Welcome to SIKA</b></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <h5>If you are a first time user ?</h5> <a href="{{path('app_register')}}"> <p>Sign up</p></a>
+                                <h5>If you are already a user ?</h5><a href="{{path('app_login')}}"><p>Sign in</p></a>
+                            </div>
+                        </div>   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

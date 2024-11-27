@@ -1,0 +1,24 @@
+#testcontent
+customer_list: Customer List
+customers: Customers
+datatable_features: DataTable with minimal features & hover style
+rendering_engine: Rendering Engine
+browser: Browser
+platform: Platform(s)
+actions: Actions
+engine_version: Engine version
+css_grade: CSS grade
+search: Search
+copyright: Copyright
+version: Version
+all_rights: All rights reserved
+#profilepage
+first_name: First Name
+last_name: Last Name
+email: Email
+save_changes: Save Changes
+change_photo: Change Photo
+remove_photo: Remove Photo
+profile_update_success: Profile Updated Successfully
+profile: Profile Settings
+settings: Settings

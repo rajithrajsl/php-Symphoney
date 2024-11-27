@@ -1,0 +1,26 @@
+#testcontent
+customer_list: Kundenliste
+customers: Kunden
+datatable_features: DataTable mit minimalen Funktionen und Schwebestil
+rendering_engine: Rendering-Engine
+browser: Browser
+platform: Plattform(en)
+actions: Aktionen
+engine_version: Motor-Version
+css_grade: CSS-Grad
+search: Suche
+copyright: Urheberrecht
+version: Fassung
+all_rights: Alle Rechte vorbehalten
+#profilepage
+first_name: Vorname
+last_name: Nachname
+email: Email
+save_changes: Änderungen speichern
+change_photo: Foto ändern
+remove_photo: Foto entfernen
+profile_update_success: Profil erfolgreich aktualisiert
+profile: Profileinstellungen
+settings: die Einstellungen
+
+

@@ -1,0 +1,71 @@
+{% extends 'layout.html.twig' %}
+
+{% set pageArea = 'customer_list'|trans %}
+{% set pageTitle = 'customers'|trans%}
+
+{% block content %}
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">{{'datatable_features'|trans}}</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="customer-list" class="table table-bordered table-hover table-striped">
+                  <thead>
+                  <tr>
+                    <th>{{'rendering_engine'|trans}}</th>
+                    <th>{{'browser'|trans}}</th>
+                    <th>{{'platform'|trans}}</th>
+                    <th>{{'engine_version'|trans}}</th>
+                    <th>{{'css_grade'|trans}}</th>
+                    <th>{{'actions'|trans}}</th>
+                  </tr>
+                  </thead>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+{% endblock %}
+{% block javascripts %}
+    <!-- page script -->
+    <script>
+
+      $(document).ready(function()
+       {
+          $('#customer-list').DataTable({
+              "paging": true,
+              "lengthChange": false,
+              "searching": true,
+              "ordering": true,
+              "info": true,
+              "autoWidth": false,
+              "responsive": true,
+              "ajax": {
+                  "url" : '{{ path('customer-list-data') }}',
+                  "dataSrc": ""
+               },
+              "columns": [
+                { "data": "Rendering engine" },
+                { "data": "Browser" },
+                { "data": "Platform" },
+                { "data": "Engine version" },
+                { "data": "CSS grade" },
+                { "data": "Actions" }
+              ]
+          });
+       });
+
+    </script>
+    {% endblock %}

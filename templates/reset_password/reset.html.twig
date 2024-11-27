@@ -1,0 +1,47 @@
+{% extends 'login_layout.html.twig' %}
+
+{% block title %}Reset your password{% endblock %}
+
+{% block body %}
+    <div class="login-box">
+        <div class="card">
+            <div class="card-body login-card-body">
+                {{ form_start(resetForm) }}
+                <div class="row">
+                    <div class="col-4">
+                        <div class="login-logo">
+                            <img src= "{{ asset('assets/images/logo.png') }}" alt="SIKA GROUP" />
+                            <a href="{{path('app_login')}}">SIKA GROUP</a>
+                        </div>
+                        <!-- /.login-logo -->
+                    </div>
+                    <div class="col-8" style="background-color: #fff;">
+                        <p class="float-left login-box-msg">Reset your password</p>
+                        <div class="input-group mb-3">
+                            {{ form_widget(resetForm.plainPassword.first) }}
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-lock"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            {{ form_widget(resetForm.plainPassword.second) }}
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-lock"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <button class="btn btn-primary">Reset password</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ form_end(resetForm) }}
+        </div>
+    </div>
+{% endblock %}
